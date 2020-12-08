@@ -1,0 +1,55 @@
+@mixin above($breakpoint) {
+    @media only screen and (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin below($breakpoint) {
+    @media only screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin between($min, $max) {
+    @media only screen and (min-width: $min + 1) and (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin landscape() {
+    @media only screen and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin portrait() {
+    @media only screen and (orientation: portrait) {
+        @content;
+    }
+}
+
+@mixin above-landscape($breakpoint) {
+    @media only screen and (min-width: $breakpoint) and (orientation: landscape) {
+        @content;
+    }
+}
+
+
+@mixin below-landscape($breakpoint) {
+    @media only screen and (max-width: $breakpoint) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin above-portrait($breakpoint) {
+    @media only screen and (min-width: $breakpoint) and (orientation: portrait) {
+        @content;
+    }
+}
+
+
+@mixin below-portrait($breakpoint) {
+    @media only screen and (max-width: $breakpoint) and (orientation: portrait) {
+        @content;
+    }
+}

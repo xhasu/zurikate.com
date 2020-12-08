@@ -1,0 +1,23 @@
+// @import 'pesticide';
+
+// device resolution
+$phone: 480px; // fonts & space breakpoint
+$xsm: 540px;
+$sm: 640px; // layout breakpoint
+$tablet: 768px; // fonts & space breakpoint
+$laptop: 960px; // layout breakpoint
+$desktop: 1280px;
+$hd: 1440px;
+
+// space
+$app-width: 1280px;
+$app-gap: 15px;
+
+// colors
+$color-green-500: #CBFF00;
+$color-green-400: #C2FF7C;
+
+
+// theme
+$color-brand: $color-green-500;
+$color-accent: $color-green-400;

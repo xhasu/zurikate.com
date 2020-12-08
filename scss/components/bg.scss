@@ -1,0 +1,29 @@
+
+.background-noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: -1;
+  opacity: .4;
+  @include no-events();
+  img {
+    display: block;
+    width: 100%;
+    // height: 100%;
+    // object-fit: cover;
+    margin-bottom: 0;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+
+    @include no-events();
+    @include cover();
+    background-color: rgba(black, .4);
+  }
+}

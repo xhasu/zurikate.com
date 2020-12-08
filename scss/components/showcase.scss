@@ -1,0 +1,114 @@
+
+.showcase {
+
+  &-section {
+    position: relative;
+    max-width: 1750px;
+    padding: 0 76px;
+    @include below($laptop) {
+      padding: 0 50px;
+    }
+    @include below($sm) {
+      padding: 0 10px;
+    }
+  }
+
+  &-title {
+    margin-bottom: 12px;
+    @include font-default();
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    &.alter {
+      margin-top: 12px;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-align: right;
+      @include below($tablet) {
+        font-size: 14px;
+      }
+      @include below($sm) {
+        font-size: 12px;
+      }
+    }
+
+    @include below($hd) {
+      font-size: 26px;
+    }
+    @include below($desktop) {
+      font-size: 21px;
+    }
+    @include below($tablet) {
+      font-size: 18px;
+    }
+    @include below($sm) {
+      font-size: 12px;
+    }
+  }
+
+  &-media {
+    img {
+      @include img-fluid();
+    }
+  }
+
+  &-swiper {
+    position: relative;
+    @include below($sm) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .swiper-arrows {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    right: 10px;
+    height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+
+    @include below($sm) {
+      left: 15px;
+      right: 15px;
+      justify-content: center;
+      top: auto;
+      bottom: -10px;
+    }
+
+    .arrow-prev,
+    .arrow-next {
+      position: relative;
+      @include size(58px);
+      cursor: pointer;
+
+      @include below($laptop) {
+        @include size(30px);
+      }
+
+      @include below($sm) {
+        margin: 0 10px;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        margin-bottom: 0;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &.swiper-button-disabled {
+        opacity: .1;
+        cursor: not-allowed;
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+
+.hero {
+
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 40px 0;
+  z-index: 1;
+
+  &-box {
+    position: relative;
+  }
+
+  &-head {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    z-index: 5;
+    max-width: 520px;
+  }
+
+  &-section {
+    position: relative;
+    max-width: 1680px;
+    padding: 0;
+    z-index: 10;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1024px;
+  }
+
+  &-item {
+    position: relative;
+    margin-top: 15%;
+    img {
+      @include img-fluid();
+    }
+  }
+
+  .page-title {
+    font-size: 120px;
+    line-height: 1;
+  }
+
+  &-subtitle {
+    font-size: 30px;
+    color: white;
+    span {
+      color: $color-brand;
+    }
+  }
+
+  &-description {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: 0;
+    max-width: 600px;
+    font-size: 30px;
+    color: white;
+    line-height: 1.2;
+    z-index: 5;
+    p {
+      margin-top: 0;
+    }
+  }
+
+  &-bg-right,
+  &-bg-left {
+    @include no-events();
+    z-index: 0;
+    img {
+      display: block;
+      margin-bottom: 0;
+    }
+  }
+
+  &-bg-left {
+    @include absolute($bottom: 0, $left: 0);
+  }
+  &-bg-right {
+    @include absolute($right: 0, $top: 0);
+  }
+  
+  &-swiper {
+    position: relative;
+  }
+
+  .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 20px;
+  }
+
+  .swiper-pagination-bullet {
+    position: relative;
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    &-active {
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        border: 1px solid white;
+        box-sizing: border-box;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@mixin font-face($name, $file, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: '#{$name}';
+    src: url('../fonts/#{$file}.woff2') format('woff2'),
+      url('../fonts/#{$file}.woff2') format('woff2');
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+@mixin font-default {
+  font-family: 'Mulish', 'Helvetica', sans-serif;
+  font-weight: 400;
+}
+
+@mixin font-bold {
+  font-family: 'Mulish', 'Helvetica', sans-serif;
+  font-weight: 700;
+}
+
+@mixin font-italic-bold {
+  font-family: 'Mulish', 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+@mixin font-black {
+  font-family: 'Mulish', 'Helvetica', sans-serif;
+  font-weight: 900;
+}
+
+@mixin font-light {
+  font-family: 'Mulish', 'Helvetica', sans-serif;
+  font-weight: 300;
+}
+
+@include font-face('Impact', 'impact/Impact');
+
+@mixin font-impact {
+  font-family: 'Impact';
+}

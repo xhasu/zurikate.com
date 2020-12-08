@@ -1,0 +1,179 @@
+
+.board {
+  position: relative;
+  z-index: 0;
+
+  &-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 0;
+    img {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0;
+      display: block;
+      max-width: 100%;
+      @include below($sm) {
+        max-width: 200%;
+      }
+    }
+    @include below($sm) {
+      opacity: .4;
+    }
+  }
+
+  &-section {
+    position: relative;
+    max-width: 1700px;
+    z-index: 1;
+    @include below($sm) {
+      padding: 0;
+    }
+  }
+
+  .page-title {
+    margin-bottom: 24px;
+    @include below($tablet) {
+      margin-bottom: 12px;
+    }
+    @include below($sm) {
+      padding: 0 10px;
+    }
+  }
+
+  &-box {
+    position: relative;
+    @include center(1600px);
+    padding: 0 68px;
+    margin-bottom: 120px;
+    @include below($laptop) {
+      padding: 0 40px;
+      margin-bottom: 80px;
+    }
+    @include below($sm) {
+      padding: 0;
+      margin-bottom: 20px;
+    }
+  }
+  &-title {
+    margin-left: 100px;
+    margin-bottom: 20px;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1;
+    color: white;
+    text-transform: uppercase;
+    @include below($sm) {
+      font-size: 32px;
+      padding: 0 10px;
+      text-align: center;
+      margin-left: auto;
+    }
+  }
+  &-swiper {
+    .swiper-slide {
+      width: auto;
+    }
+    @include below($sm) {
+      position: relative;
+    }
+  }
+
+  .swiper-arrows {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+
+    @include below($sm) {
+      top: 15px;
+      left: 10px;
+      right: 10px;
+    }
+
+    .arrow-prev,
+    .arrow-next {
+      position: relative;
+      @include size(58px);
+      cursor: pointer;
+
+      @include below($laptop) {
+        @include size(30px);
+      }
+
+
+      img {
+        display: block;
+        width: 100%;
+        margin-bottom: 0;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &.swiper-button-disabled {
+        opacity: .1;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &-item {
+    position: relative;
+    padding: 0 20px;
+    box-sizing: border-box;
+    @include below($laptop) {
+      max-width: 240px;
+      margin: 0 auto;
+    }
+    @include below($sm) {
+      max-width: 180px;
+      padding: 0 10px;
+    }
+  }
+  &-media {
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    @include center(380px);
+    transition: all ease 400ms;
+    @include below($sm) {
+      padding-top: 25px;
+      padding-bottom: 10px;
+    }
+    img {
+      @include img-responsive();
+    }
+    &:hover {
+      transform: translateY(-15px) scale(1.1);
+    }
+  }
+  &-name {
+    text-align: center;
+    @include font-italic-bold();
+    font-size: 24px;
+    line-height: 1.2;
+    padding: 0 40px;
+    color: white;
+    text-transform: uppercase;
+
+    @include below($desktop) {
+      font-size: 18px;
+      padding: 0 10px;
+    }
+    @include below($laptop) {
+      font-size: 14px;
+    }
+  }
+
+}

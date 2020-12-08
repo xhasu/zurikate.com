@@ -1,0 +1,38 @@
+@mixin img-responsive {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-responsive {
+  @include img-responsive();
+}
+
+@mixin img-fluid {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-fluid {
+  @include img-fluid();
+}
+
+@mixin no-events {
+  pointer-events: none;
+  user-select: none;
+  cursor: context-menu;
+}
+
+@mixin basehold {
+  background: url('https://basehold.it/i/24');
+  background-size: 4px 24px;
+}
+
+@mixin mark($color: red) {
+  outline: 1px solid $color;
+}
