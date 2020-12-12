@@ -2,13 +2,29 @@
 .info {
   &-section {}
   &-box {}
-  &-head {}
+  &-head {
+    position: relative;
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
   &-title {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 1;
+  }
+  &-subtitle {
+    margin-left: 320px;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: $color-brand;
+  }
+  &-lead {
     overflow: hidden;
     span {
       display: block;
       @include font-impact();
-      font-size: 120px;
+      font-size: 150px;
       line-height: 1;
       text-transform: uppercase;
       &:nth-child(1){
@@ -64,6 +80,7 @@
 
   .page-lead {
     margin-bottom: 36px;
+    margin-left: 350px;
   }
 
   &-bg {

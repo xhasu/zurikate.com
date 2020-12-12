@@ -1,0 +1,44 @@
+
+.kit {
+
+  &-content {
+
+    position: relative;
+    padding-left: 30px;
+
+    ul {}
+    li {
+      display: block;
+      margin-bottom: 8px;
+    }
+    p {
+      font-size: 18px;
+      font-style: italic;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+    p::before {
+      content: "-";
+      display: inline-block;
+    }
+  }
+  &-title {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: $color-brand;
+    margin-bottom: 16px;
+  }
+  &-media {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    img {
+      @include img-fluid();
+    }
+    @include below($laptop + 32px) {
+      max-width: 420px;
+      margin-bottom: 16px;
+    }
+  }
+  
+}

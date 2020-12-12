@@ -73,7 +73,7 @@
   let showcaseArrows = document.querySelector('.showcase .swiper-arrows');
 
   new Swiper(swiperShowcase, {
-    loop: true,
+    // loop: true,
     threshold: 20,
     effect: 'fade',
     fadeEffect: {
@@ -93,7 +93,7 @@
   let swiperHero = document.querySelector('.hero-swiper .swiper-container');
 
   new Swiper(swiperHero, {
-    loop: true,
+    // loop: true,
     threshold: 20,
     pagination: {
       el: swiperHero.querySelector('.swiper-pagination'),
