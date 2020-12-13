@@ -9,34 +9,35 @@
   }
 }
 
+@include font-face('CenturyGothic', 'CenturyGothic/CenturyGothic-Regular', 400);
+@include font-face('CenturyGothic', 'CenturyGothic/CenturyGothic-Bold', 700);
+@include font-face('CenturyGothic', 'CenturyGothic/CenturyGothic-Italic', 400, 'italic');
+@include font-face('CenturyGothic', 'CenturyGothic/CenturyGothic-BoldItalic', 700, 'italic');
+
 @mixin font-default {
-  font-family: 'Mulish', 'Helvetica', sans-serif;
+  font-family: 'CenturyGothic', 'Helvetica', sans-serif;
   font-weight: 400;
 }
 
 @mixin font-bold {
-  font-family: 'Mulish', 'Helvetica', sans-serif;
+  font-family: 'CenturyGothic', 'Helvetica', sans-serif;
   font-weight: 700;
 }
 
 @mixin font-italic-bold {
-  font-family: 'Mulish', 'Helvetica', sans-serif;
+  font-family: 'CenturyGothic', 'Helvetica', sans-serif;
   font-weight: 700;
   font-style: italic;
 }
 
-@mixin font-black {
-  font-family: 'Mulish', 'Helvetica', sans-serif;
+@mixin font-italic {
+  font-family: 'CenturyGothic', 'Helvetica', sans-serif;
+  font-style: italic;
+}
+
+@include font-face('ObjectSans', 'ObjectSans/ObjectSans-Heavy', 900);
+
+@mixin font-object {
+  font-family: 'ObjectSans';
   font-weight: 900;
-}
-
-@mixin font-light {
-  font-family: 'Mulish', 'Helvetica', sans-serif;
-  font-weight: 300;
-}
-
-@include font-face('Impact', 'impact/Impact');
-
-@mixin font-impact {
-  font-family: 'Impact';
 }

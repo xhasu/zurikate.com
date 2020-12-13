@@ -1,10 +1,22 @@
 
 .kit {
 
+  .page-title {
+    padding-top: 16px;
+    margin-bottom: 24px;
+    @include below($laptop) {
+      margin-bottom: 12px;
+    }
+  }
+
   &-content {
 
     position: relative;
     padding-left: 30px;
+
+    @include below($tablet) {
+      padding-left: 0;
+    }
 
     ul {}
     li {
@@ -12,10 +24,18 @@
       margin-bottom: 8px;
     }
     p {
-      font-size: 18px;
+      font-size: 26px;
       font-style: italic;
+      line-height: 1.4;
       margin-top: 0;
-      margin-bottom: 12px;
+      margin-bottom: 30px;
+      @include below($desktop) {
+        font-size: 21px;
+      }
+      @include below($phone) {
+        font-size: 18px;
+        margin-bottom: 12px;
+      }
     }
     p::before {
       content: "-";
@@ -23,10 +43,24 @@
     }
   }
   &-title {
-    font-size: 24px;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
     color: $color-brand;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
+    @include below($hd) {
+      font-size: 24px;
+    }
+    @include below($desktop) {
+      font-size: 21px;
+    }
+    @include below($phone) {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
   }
   &-media {
     position: relative;
@@ -35,7 +69,7 @@
     img {
       @include img-fluid();
     }
-    @include below($laptop + 32px) {
+    @include below($desktop) {
       max-width: 420px;
       margin-bottom: 16px;
     }
