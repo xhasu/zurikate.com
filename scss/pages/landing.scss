@@ -26,3 +26,26 @@ h3.page-subtitle {
   line-height: 1.2;
   color: white;
 }
+
+.embed {
+  display: block;
+  overflow: hidden;
+  background-color: black;
+}
+
+.embed video {
+  display: block;
+  width: 100%;
+  height: auto;
+  // height: 100%;
+  // min-height: 100vh;
+  min-width: 100%;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  object-fit: cover;
+  object-position: center;
+  @include below($tablet) {
+    object-fit: contain;
+    min-height: auto;
+  }
+}

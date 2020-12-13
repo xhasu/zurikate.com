@@ -106,4 +106,14 @@
     },
   });
 
+  // AOS
+  try {  
+    Promise.all(Array.from(document.images).filter(img => !img.complete && img.loading != "lazy").map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then((promises) => {
+      console.log('images finished loading', promises.length);
+      AOS.init();
+    });
+  } catch (error) {
+    AOS.init();
+  }
+
 })();
