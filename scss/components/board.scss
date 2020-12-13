@@ -2,6 +2,7 @@
 .board {
   position: relative;
   z-index: 0;
+  overflow: hidden;
 
   &-bg {
     position: absolute;
@@ -11,6 +12,9 @@
     bottom: 0;
     overflow: hidden;
     z-index: 0;
+    opacity: .6;
+    padding: 0 60px;
+    box-sizing: border-box;
     img {
       margin-left: auto;
       margin-right: auto;
@@ -22,6 +26,7 @@
       }
     }
     @include below($sm) {
+      padding: 0 30px;
       opacity: .4;
     }
   }
@@ -70,8 +75,7 @@
     @include below($sm) {
       font-size: 32px;
       padding: 0 10px;
-      text-align: center;
-      margin-left: auto;
+      margin-left: 20px;
     }
   }
   &-swiper {
@@ -110,10 +114,10 @@
         @include size(30px);
       }
 
-
       img {
         display: block;
         width: 100%;
+        height: 100%;
         margin-bottom: 0;
       }
 
@@ -173,6 +177,26 @@
     }
     @include below($laptop) {
       font-size: 14px;
+    }
+  }
+
+  &-sticker {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: .8;
+    img {
+      margin-left: auto;
+      margin-right: 0;
+      display: block;
+      max-width: 60%;
+      width: 100%;
+      height: auto;
+      margin-bottom: 0;
     }
   }
 

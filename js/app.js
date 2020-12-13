@@ -28,17 +28,13 @@
   }
 
   // parallax - rellax
-  new Rellax('.board .board-info', {
-    speed: 6,
-    center: true,
-  });
 
   new Rellax('.board .board-bg', {
     speed: 10,
   });
 
   new Rellax('.background-noise img', {
-    speed: 6,
+    speed: 4,
   });
 
   // swiper
@@ -93,8 +89,12 @@
   let swiperHero = document.querySelector('.hero-swiper .swiper-container');
 
   new Swiper(swiperHero, {
-    // loop: true,
+    loop: true,
     threshold: 20,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
     pagination: {
       el: swiperHero.querySelector('.swiper-pagination'),
       type: 'bullets',

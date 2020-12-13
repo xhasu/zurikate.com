@@ -2,19 +2,29 @@
 .info {
   &-section {}
   &-box {
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    // justify-content: space-between;
   }
   &-item {}
   &-head {
     position: relative;
     padding: 0 40px;
     box-sizing: border-box;
+    @include below($tablet) {
+      padding: 0 15px;
+      margin-bottom: 16px;
+    }
   }
   &-title {
     @include font-object();
     font-size: 36px;
     line-height: 1;
+    @include below($laptop) {
+      font-size: 24px;
+    }
+    @include below($tablet) {
+      font-size: 18px;
+    }
   }
   &-subtitle {
     margin-left: 240px;
@@ -22,6 +32,14 @@
     line-height: 1;
     font-size: 60px;
     color: $color-brand;
+    @include below($laptop) {
+      margin-left: 120px;
+      font-size: 42px;
+    }
+    @include below($tablet) {
+      margin-left: 0;
+      font-size: 30px;
+    }
   }
   &-lead {
     overflow: hidden;
@@ -31,6 +49,17 @@
       font-size: 150px;
       line-height: 1;
       text-transform: uppercase;
+
+    @include below($desktop) {
+      font-size: 120px;
+    }
+    @include below($laptop) {
+      font-size: 80px;
+    }
+    @include below($phone) {
+      font-size: 60px;
+    }
+
       &:nth-child(1){
         color: transparent;
         -webkit-text-stroke: 2px $color-brand;
