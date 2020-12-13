@@ -180,7 +180,7 @@
     .content-item {
       display: flex;
       align-items: flex-start;
-
+      box-sizing: border-box;
       small {
         text-transform: uppercase;
         font-style: italic;
@@ -216,6 +216,7 @@
       line-height: 1;
       margin-top: 0;
       margin-bottom: 12px;
+      box-sizing: border-box;
       @include below($desktop) {
         font-size: 24px;
       }
@@ -244,6 +245,10 @@
         }
         @include below($laptop) {
           margin-bottom: 12px;
+        }
+        @include below($sm) {
+          padding-left: 15px;
+          font-size: 18px;
         }
       }
     }
