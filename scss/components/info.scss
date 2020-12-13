@@ -1,18 +1,30 @@
 
 .info {
-  &-section {}
+  &-section {
+    padding-bottom: 60px;
+  }
   &-box {
-    // display: flex;
-    // justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    @include below($laptop) {
+      display: block;
+    }
   }
   &-item {}
   &-head {
     position: relative;
     padding: 0 40px;
+    margin-bottom: 160px;
     box-sizing: border-box;
+    @include below($laptop) {
+      margin-bottom: 60px;
+    }
     @include below($tablet) {
       padding: 0 15px;
-      margin-bottom: 16px;
+    }
+    @include below($phone) {
+      margin-bottom: 40px;
     }
   }
   &-title {
@@ -43,23 +55,26 @@
   }
   &-lead {
     overflow: hidden;
+    margin-bottom: 160px;
+    @include below($laptop) {
+      text-align: center;
+      margin-bottom: 40px;
+    }
     span {
       display: block;
       @include font-object();
       font-size: 150px;
       line-height: 1;
       text-transform: uppercase;
-
-    @include below($desktop) {
-      font-size: 120px;
-    }
-    @include below($laptop) {
-      font-size: 80px;
-    }
-    @include below($phone) {
-      font-size: 60px;
-    }
-
+      @include below($hd) {
+        font-size: 120px;
+      }
+      @include below($desktop) {
+        font-size: 80px;
+      }
+      @include below($tablet) {
+        font-size: 60px;
+      }
       &:nth-child(1){
         color: transparent;
         -webkit-text-stroke: 2px $color-brand;
@@ -72,33 +87,142 @@
       }
     }
   }
-  &-content {
-    margin-right: 0;
-    margin-left: auto;
-    max-width: 320px;
+  &-contact {
+    margin-bottom: 30px;
+    @include below($laptop) {
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 60px;
+    }
     ul {
       padding: 0;
       margin: 0;
     }
     li {
-      display: flex;
-      align-items: center;
       padding: 0;
-      margin: 0 0 16px;
-      &:first-child {
-        padding-bottom: 16px;
-        border-bottom: 1px solid $color-brand;
+      margin: 0 0 32px;
+      @include below($sm) {
+        margin-bottom: 16px;
       }
     }
+    .contact-item {
+      display: flex;
+      align-items: center;
+
+      font-size: 30px;
+      color: $color-brand;
+      @include below($desktop) {
+        font-size: 24px;
+      }
+      @include below($phone) {
+        font-size: 18px;
+      }
+    }
+    .icon {
+      min-width: 60px;
+      display: block;
+      margin-right: 24px;
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+    span,
+    a {
+      text-decoration: none;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  &-content {
+    margin-right: 0;
+    margin-left: auto;
+    max-width: 760px;
+
+    @include below($desktop) {
+      max-width: 620px;
+    }
+    @include below(1080px) {
+      max-width: 540px;
+    }
+
+    @include below($laptop) {
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    ul {
+      padding: 0;
+      margin: 0 0 24px;
+    }
+    li {
+      display: block;
+      padding: 0;
+      margin: 0 0 32px;
+      box-sizing: border-box;
+    }
+
+    li + li {
+      padding-left: 100px;
+      @include below($desktop) {
+        padding-left: 50px;
+      }
+      @include below(1080px) {
+        padding-left: 0;
+      }
+    }
+
+    .content-item {
+      display: flex;
+      align-items: flex-start;
+
+      small {
+        text-transform: uppercase;
+        font-style: italic;
+        font-size: 18px;
+        line-height: 1.2;
+        letter-spacing: 0.3em;
+      }
+      .icon + div {
+        flex-grow: 1;
+      }
+    }
+      
     .icon {
       margin-right: 20px;
       font-size: 24px;
       line-height: 1;
+      display: grid;
+      grid-template-columns: 75px 55px;
+      @include below($desktop) {
+        margin-right: 0;
+      }
+      @include below($laptop) {
+        display: none;
+      }
+      img {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 auto;
+      }
     }
     p {
-      font-size: 18px;
+      font-size: 32px;
+      line-height: 1;
       margin-top: 0;
-      margin-bottom: 0;
+      margin-bottom: 12px;
+      @include below($desktop) {
+        font-size: 24px;
+      }
+      @include below(1080px) {
+        font-size: 21px;
+      }
+      
       span {
         color: $color-brand;
       }
@@ -106,6 +230,88 @@
         text-decoration: none;
         &:focus {
           outline: none;
+        }
+      }
+      &.lead {
+        padding-left: 30px;
+        font-size: 42px;
+        margin-bottom: 40px;
+        @include below($desktop) {
+          font-size: 30px;
+        }
+        @include below(1080px) {
+          font-size: 24px;
+        }
+        @include below($laptop) {
+          margin-bottom: 12px;
+        }
+      }
+    }
+
+    input[type="email"],
+    input[type="text"] {
+      display: block;
+      width: 100%;
+      border: none;
+      border-radius: 0;
+      height: 60px;
+      padding: 8px 15px;
+      font-size: 24px;
+      text-align: left;
+      background-color: white;
+      box-sizing: border-box;
+      @include below($desktop) {
+        height: 40px;
+      }
+    }
+
+    button[type="submit"] {
+      display: block;
+      margin-right: 0;
+      margin-left: auto;
+      border: none;
+      padding: 8px 16px;
+      @include font-object();
+      font-size: 60px;
+      color: black;
+      cursor: pointer;
+      text-transform: uppercase;
+      background-color: $color-brand;
+      @include below($laptop) {
+        font-size: 32px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    .input-file {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      padding: 8px 15px;
+      background-color: white;
+      cursor: pointer;
+      box-sizing: border-box;
+      @include below($desktop) {
+        height: 40px;
+      }
+      img {
+        display: block;
+        height: auto;
+        margin-bottom: 0;
+        margin-right: 12px;
+        @include below($desktop) {
+          width: 30px;
+          margin-right: 0;
+        }
+      }
+      span {
+        font-size: 30px;
+        color: black;
+        padding-left: 20px;
+        font-style: italic;
+        @include below($desktop) {
+          font-size: 24px;
         }
       }
     }
