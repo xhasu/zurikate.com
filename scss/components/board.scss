@@ -9,8 +9,6 @@
     top: 0;
     right: 0;
     left: 0;
-    bottom: 0;
-    overflow: hidden;
     z-index: 0;
     opacity: .6;
     padding: 0 60px;
@@ -21,9 +19,6 @@
       margin-bottom: 0;
       display: block;
       max-width: 100%;
-      @include below($sm) {
-        max-width: 200%;
-      }
     }
     @include below($sm) {
       padding: 0 30px;
@@ -54,10 +49,10 @@
     position: relative;
     @include center(1600px);
     padding: 0 68px;
-    margin-bottom: 120px;
+    margin-bottom: 80px;
     @include below($laptop) {
       padding: 0 40px;
-      margin-bottom: 80px;
+      margin-bottom: 40px;
     }
     @include below($sm) {
       padding: 0;
@@ -67,6 +62,7 @@
   &-title {
     margin-left: 100px;
     margin-bottom: 20px;
+    @include font-object();
     font-size: 48px;
     font-weight: 900;
     line-height: 1;
@@ -99,7 +95,6 @@
     z-index: 10;
 
     @include below($sm) {
-      top: 15px;
       left: 10px;
       right: 10px;
     }
@@ -107,7 +102,7 @@
     .arrow-prev,
     .arrow-next {
       position: relative;
-      @include size(58px);
+      @include size(45px);
       cursor: pointer;
 
       @include below($laptop) {
@@ -149,7 +144,7 @@
     position: relative;
     padding-top: 40px;
     padding-bottom: 20px;
-    @include center(380px);
+    @include center(300px);
     transition: all ease 400ms;
     @include below($sm) {
       padding-top: 25px;

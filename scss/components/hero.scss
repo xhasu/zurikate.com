@@ -12,15 +12,15 @@
     padding: 20px 0 0 0;
   }
 
-  &-box {
-    position: relative;
-  }
-
   &-section {
     position: relative;
     max-width: 1680px;
     padding: 0;
     z-index: 10;
+  }
+
+  &-box {
+    position: relative;
   }
 
   .swiper-slide {
@@ -31,7 +31,7 @@
 
   &-item {
     position: relative;
-    margin-top: 10%;
+    margin-top: 250px;
     img {
       @include img-fluid();
     }
@@ -42,10 +42,10 @@
 
   &-head {
     position: absolute;
-    top: 0;
-    left: 40px;
-    z-index: 5;
-    max-width: 800px;
+    top: 10%;
+    left: 10%;
+    z-index: 1;
+    max-width: 720px;
     box-sizing: border-box;
     @include below($hd) {
       max-width: 520px;
@@ -53,6 +53,27 @@
     @include below($laptop) {
       position: static;
       padding: 0 10px;
+    }
+  }
+
+  &-title {
+    position: relative;
+    margin-bottom: 8px;
+    @include font-object();
+    font-size: 80px;
+    line-height: 1;
+    text-transform: uppercase;
+    span {
+      color: $color-brand;
+    }
+    @include below($hd) {
+      font-size: 70px;
+    }
+    @include below($desktop) {
+      font-size: 52px;
+    }
+    @include below($phone) {
+      font-size: 32px;
     }
   }
 
@@ -72,7 +93,7 @@
   }
 
   .page-title {
-    font-size: 120px;
+    font-size: 90px;
     line-height: 1;
     @include below($hd) {
       font-size: 80px;
@@ -141,14 +162,21 @@
   }
 
   &-bg-left {
-    @include absolute($bottom: 0, $left: 0);
+    @include absolute($top: 60%, $left: 0);
   }
   &-bg-right {
     @include absolute($right: 0, $top: 0);
+    @include below($desktop) {
+      margin-top: 25%;
+    }
+    @include below($sm) {
+      margin-top: 30%;
+    }
   }
   
   &-swiper {
     position: relative;
+    z-index: 2;
   }
 
   .swiper-pagination {

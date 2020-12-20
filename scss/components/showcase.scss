@@ -1,6 +1,9 @@
 
 .showcase {
 
+  position: relative;
+  z-index: 1;
+
   &-section {
     position: relative;
     max-width: 1750px;

@@ -29,13 +29,13 @@
 
   // parallax - rellax
 
-  new Rellax('.board .board-bg', {
-    speed: 10,
-  });
+  new Rellax('.board .board-bg', { speed: -8 });
+  new Rellax('.kit .kit-bg', { speed: 4 });
 
-  new Rellax('.background-noise img', {
-    speed: 4,
-  });
+  // new Rellax('.background-noise img', { speed: 4 });
+
+  new Rellax('.hero-head', { speed: 2 });
+  new Rellax('.hero-description', { speed: 1 });
 
   // swiper
   let swipers = document.querySelectorAll('.board-swiper');
@@ -51,6 +51,7 @@
         delay: 6000,
         disableOnInteraction: false,
       },
+      slidesPerView: 2,
       breakpoints: {
         960: {
           slidesPerView: 3,
@@ -60,7 +61,6 @@
         prevEl: arrows.querySelector('.arrow-prev'),
         nextEl: arrows.querySelector('.arrow-next'),
       },
-      slidesPerView: 'auto',
     });
   });
 
@@ -92,7 +92,7 @@
     loop: true,
     threshold: 20,
     autoplay: {
-      delay: 4000,
+      delay: 1500,
       disableOnInteraction: false,
     },
     pagination: {
@@ -112,7 +112,8 @@
       console.log('images finished loading', promises.length);
       AOS.init();
     });
-  } catch (error) {
+  } catch (err) {
+    console.log(err)
     AOS.init();
   }
 
