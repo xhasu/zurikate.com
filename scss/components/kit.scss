@@ -27,6 +27,13 @@
     }
   }
 
+  &-section {
+    @include below($sm) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
   .page-title {
     padding-top: 16px;
     margin-bottom: 24px;

@@ -75,11 +75,13 @@
     }
   }
   &-swiper {
+    box-sizing: border-box;
     .swiper-slide {
       width: auto;
     }
     @include below($sm) {
       position: relative;
+      padding: 0 40px;
     }
   }
 
@@ -95,8 +97,8 @@
     z-index: 10;
 
     @include below($sm) {
-      left: 10px;
-      right: 10px;
+      left: 5px;
+      right: 5px;
     }
 
     .arrow-prev,
