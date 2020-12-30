@@ -134,4 +134,80 @@
     ]
   })
 
+
+  // form contact ajax
+  let btnSubmit = document.querySelector('#contactForm');
+  let isLoading = false;
+  btnSubmit &&
+    btnSubmit.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if (isLoading) return;
+      isLoading = true;
+
+      toggleLoadingForm();
+
+      let url = '/contact.php';
+
+      let email = document.querySelector('#email').value;
+      let car = document.querySelector('#car').value;
+      let file_vehicle = document.querySelector('#file_vehicle').files[0];
+      let file_wheel = document.querySelector('#file_wheel').files[0];
+      let color = document.querySelector('#color').value;
+
+      let data = new FormData();
+      data.append('email', email);
+      data.append('car', car);
+      data.append('file_vehicle', file_vehicle);
+      data.append('file_wheel', file_wheel);
+      data.append('color', color);
+
+      axios
+        .post(url, data)
+        .then((response) => {
+          console.log(response.data);
+          if (response.data.success) {
+            showSnackbar('Thank you for contacting us');
+            clearContactForm();
+          }
+          if (response.data.error) {
+            console.log(response.data);
+            showSnackbar('Email is not valid');
+          }
+          isLoading = false;
+          toggleLoadingForm();
+        })
+        .catch((err) => {
+          console.log(err);
+          showSnackbar('Ups... connection failed, try again');
+          isLoading = false;
+          toggleLoadingForm();
+        });
+
+      return false;
+    });
+
+  function showSnackbar (message) {
+    Snackbar.show({
+      pos: 'bottom-right',
+      showAction: false,
+      text: message,
+      textColor: '#000',
+      backgroundColor: '#CBFF00',
+    });
+  }
+
+  function clearContactForm() {
+    document.querySelector('#email').value = '';
+    document.querySelector('#car').value = '';
+    document.querySelector('#file_vehicle').value = null;
+    document.querySelector('#file_wheel').value = null;
+    document.querySelector('#color').value = '';
+  }
+
+  function toggleLoadingForm() {
+    document.querySelector('.loading').classList.toggle('active');
+    document.querySelector('body').classList.toggle('overflow-hidden');
+  }
+
 })();
