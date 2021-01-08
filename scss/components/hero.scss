@@ -134,6 +134,7 @@
       padding: 0 10px;
     }
     @include below($phone) {
+      margin-top: 18px;
       font-size: 18px;
     }
   }
@@ -157,7 +158,7 @@
     }
     @include below($phone) {
       max-width: 180px;
-      opacity: .4;
+      opacity: .4 !important;
     }
   }
 
@@ -184,10 +185,19 @@
       padding: 0 10px;
       text-align: right;
     }
+    
   }
 
+  .swiper-container-horizontal > .swiper-pagination-bullets {
+    @include below($phone) {
+      bottom: 0;
+    }
+  }
   .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 0 20px;
+    @include below($phone) {
+      margin: 0 10px;
+    }
   }
 
   .swiper-pagination-bullet {
@@ -208,6 +218,12 @@
         border-radius: 100%;
         border: 1px solid white;
         box-sizing: border-box;
+        @include below($phone) {
+          width: 20px;
+          height: 20px;
+          top: -5px;
+          left: -5px;
+        }
       }
     }
   }

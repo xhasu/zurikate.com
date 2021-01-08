@@ -27,7 +27,8 @@
       padding: 0 15px;
     }
     @include below($phone) {
-      margin-bottom: 40px;
+      padding: 0;
+      margin-bottom: 20px;
     }
   }
   &-title {
@@ -60,8 +61,10 @@
     overflow: hidden;
     margin-bottom: 160px;
     @include below($laptop) {
-      text-align: center;
       margin-bottom: 40px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
     }
     span {
       display: block;
@@ -253,9 +256,10 @@
         }
       }
     }
-
+    select,
     input[type="email"],
     input[type="text"] {
+      appearance: none;
       display: block;
       width: 100%;
       border: none;
@@ -268,6 +272,7 @@
       box-sizing: border-box;
       @include below($desktop) {
         height: 35px;
+        font-size: 21px;
       }
     }
 
@@ -319,6 +324,20 @@
           font-size: 24px;
         }
       }
+
+      span:last-child {
+        display: none;
+      }
+    }
+
+    input:valid + .input-file {
+      background-color: $color-brand;
+    }
+    input:valid + .input-file span {
+      display: none;
+    }
+    input:valid + .input-file span:last-child {
+      display: inline-block;
     }
   }
 
@@ -342,6 +361,9 @@
       width: 100%;
       height: auto;
       margin-bottom: 0;
+    }
+    @include below($tablet) {
+      opacity: .4 !important;
     }
   }
 }

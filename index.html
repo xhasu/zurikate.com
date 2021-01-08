@@ -77,6 +77,7 @@
 					<!-- navbar -->
 					<nav class="navbar">
 						<ul>
+							<li><span data-to-view="#embed">Home</span></li>
 							<li><span data-to-view="#colorsboard">See Color Board</span></li>
 							<li><span data-to-view="#bestsellers">Best Sellers</span></li>
 						</ul>
@@ -90,9 +91,9 @@
 			</section>
 		</header>
 
-		<div class="embed">
-			<video preload="metadata" autoplay="autoplay" loop="loop" muted="muted" poster="media/video-poster.jpg">
-				<source src="media/BMW-Zurikate.mp4" type="video/mp4">
+		<div class="embed" id="embed">
+			<video id="promovideo" preload="metadata" autoplay="autoplay" loop="loop" muted="muted" poster="media/video-poster.jpg">
+				<source type="video/mp4">
 			 	<img src="media/video-poster.jpg" alt="BMW video poster ">
 			</video>
 		</div>
@@ -155,7 +156,7 @@
 
 					</div>
 
-					<div class="hero-description" data-rellax-xs-speed="0">
+					<div class="hero-description" data-rellax-xs-speed="0" data-rellax-tablet-speed="0">
 						<p>
 							From our minds to reality, we work in order to provide you with the best product. That’s why we design, produce, and install our kits if you need it.
 						</p>
@@ -184,7 +185,7 @@
 
 				<section class="section board-section">
 
-					<h2 class="page-title" data-aos="fade-right" data-aos-anchor-placement="bottom-bottom"><span>Colors</span> Board</h2>
+					<h2 class="page-title" data-aos="fade-right" data-aos-anchor-placement="bottom-bottom"><span>Color</span> / finishess board</h2>
 
 					<div class="board-box">
 						<div class="board-title">Gloss</div>
@@ -580,12 +581,11 @@
 						</div>
 						<div class="col-12 col-lg-6">
 							<div class="kit-media" data-aos="fade-up" data-aos-anchor-placement="top-center">
-								<img src="img/kit.png" alt="kit zurikate" loading="lazy">
-
 								<div class="kit-minibox">
 									<p>1 Year warranty.</p>
 									<p>Wash with care.</p>
 								</div>
+								<img src="img/kit.png" alt="kit zurikate" loading="lazy">
 							</div>
 						</div>
 					</div>
@@ -692,11 +692,12 @@
 													<i> <span>One</span> of you <span>vehicle</span> </i>
 												</p>
 												<label for="file_vehicle">
+													<input type="file" name="file_vehicle" id="file_vehicle" style="display: none;" accept="image/*" required>
 													<div class="input-file">
 														<img src="img/icons/icon-camera-black.png" alt="icon camera">
 														<span>Upload image</span>
+														<span>Change image</span>
 													</div>
-													<input type="file" name="file_vehicle" id="file_vehicle" style="display: none;" accept="image/*">
 												</label>
 											</div>
 										</div>
@@ -712,11 +713,12 @@
 													<i> <span>One</span> of you <span>wheel</span> </i>
 												</p>
 												<label for="file_wheel">
+													<input type="file" name="file_wheel" id="file_wheel" style="display: none;" accept="image/*" required>
 													<div class="input-file">
 														<img src="img/icons/icon-camera-black.png" alt="icon camera">
 														<span>Upload image</span>
+														<span>Change image</span>
 													</div>
-													<input type="file" name="file_wheel" id="file_wheel" style="display: none;" accept="image/*">
 												</label>
 											</div>
 										</div>
@@ -731,7 +733,84 @@
 												<p>
 													<i> Send the <span>color</span> you choose for your <span>wheel.</span> </i>
 												</p>
-												<input type="text" name="color" id="color" readonly required>
+												<select name="color" id="color" required>
+													<option value="" selected style="display: none"></option>
+													<optgroup label="Gloss">
+														<option value=" Gloss chocolate metallic">
+															Gloss chocolate metallic
+														</option>
+														<option value="Gloss luxury black">
+															Gloss luxury black
+														</option>
+														<option value="Gloss fire red">
+															Gloss fire red
+														</option>
+														<option value="Gloss girly girl">
+															Gloss girly girl
+														</option>
+														<option value="Gloss golden beach">
+															Gloss golden beach
+														</option>
+														<option value="Gloss caution yellow">
+															Gloss caution yellow
+														</option>
+														<option value="Gloss bright lime">
+															Gloss bright lime
+														</option>
+														<option value="Gloss carbon fiber">
+															Gloss carbon fiber
+														</option>
+													</optgroup>
+													<optgroup label="Satin">
+														<option value="Satin barbie pink">
+															Satin barbie pink
+														</option>
+														<option value="Satin azure">
+															Satin azure
+														</option>
+														<option value="Satin polar ice">
+															Satin polar ice
+														</option>
+														<option value="Satin red night">
+															Satin red night
+														</option>
+														<option value="Satin black golden-victory">
+															Satin black golden-victory
+														</option>
+													</optgroup>
+													<optgroup label="Matte">
+														<option value="Matte military base">
+															Matte military base
+														</option>
+														<option value="Matte brown">
+															Matte brown
+														</option>
+														<option value="Matte aluminum">
+															Matte aluminum
+														</option>
+														<option value="Matte gun metal">
+															Matte gun metal
+														</option>
+														<option value="Matte hard black">
+															Matte hard black
+														</option>
+														<option value="Matte metallic blue">
+															Matte metallic blue
+														</option>
+														<option value="Matte morado">
+															Matte morado
+														</option>
+														<option value="Matte concept orange">
+															Matte concept orange
+														</option>
+													</optgroup>
+													<optgroup label="Reflective">
+														<option value="Reflective zurikate black">
+															Reflective zurikate black
+														</option>
+													</optgroup>
+												</select>
+												<!-- <input type="text" name="color" id="color" readonly required> -->
 												<br>
 												<small>Please allow 24 hours for our response</small>
 											</div>
@@ -780,7 +859,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.js"></script>
-	<script src="js/huebee.pkgd.min.js"></script>
 	
 	<!-- polyfill -->
 	<script src="js/smoothscroll.min.js"></script>

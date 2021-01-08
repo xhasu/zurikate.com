@@ -1,5 +1,14 @@
 (function() {
 
+  // video
+  const promovideo = document.querySelector('#promovideo');
+  if( window.innerWidth < 768 ) {
+    promovideo.setAttribute('src', 'media/BMW-Zurikate-Mobile.mp4')
+  } else {
+    promovideo.setAttribute('src', 'media/BMW-Zurikate.mp4')
+  }
+
+  // menu
   const burger = document.querySelector('#burger');
   const menu = document.querySelector('#menu');
 
@@ -116,24 +125,6 @@
     console.log(err)
     AOS.init();
   }
-
-  // color picker
-  const hueb = new Huebee('#color', {
-    shades: 0,
-    hues: 5,
-    // setText: false,
-    customColors: [
-      "#1b1413",
-      "#090909",
-      "#870c0c",
-      "#c13b7f",
-      "#765f31",
-      "#af9409",
-      "#5c873c",
-      "#313031",
-    ]
-  })
-
 
   // form contact ajax
   let btnSubmit = document.querySelector('#contactForm');

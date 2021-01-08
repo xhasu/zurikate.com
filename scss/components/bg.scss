@@ -10,7 +10,7 @@
   opacity: .4;
   @include no-events();
   background-color: black;
-  margin-top: 100vh;
+  padding-top: 56.25%;
   img {
     // margin-top: 100vh;
     display: block;
@@ -32,5 +32,9 @@
     @include no-events();
     @include cover();
     background-color: rgba(black, .2);
+  }
+
+  @include below($phone) {
+    padding-top: 320px;
   }
 }
