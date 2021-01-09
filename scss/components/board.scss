@@ -37,11 +37,9 @@
 
   .page-title {
     margin-bottom: 24px;
-    @include below($tablet) {
-      margin-bottom: 12px;
-    }
     @include below($sm) {
       padding: 0 10px;
+      margin-bottom: 32px;
     }
   }
 
