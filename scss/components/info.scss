@@ -287,6 +287,14 @@
       }
     }
 
+    select {
+      @include below($sm) {
+        height: auto;
+        padding-top: 9px;
+        padding-bottom: 8px;
+      }
+    }
+
     button[type="submit"] {
       display: block;
       margin-right: 0;
