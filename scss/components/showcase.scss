@@ -4,6 +4,10 @@
   position: relative;
   z-index: 1;
 
+  @include below($sm) {
+    padding-top: 10px;
+  }
+
   &-section {
     position: relative;
     max-width: 1750px;
@@ -61,7 +65,7 @@
   &-swiper {
     position: relative;
     @include below($sm) {
-      margin-bottom: 40px;
+      margin-bottom: 60px;
     }
   }
 
