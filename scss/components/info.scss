@@ -290,9 +290,7 @@
     select {
       @include below($sm) {
         height: auto;
-        padding-top: 4px;
-        padding-bottom: 4px;
-        line-height: 1.6;
+        min-height: 35px;
       }
     }
 
