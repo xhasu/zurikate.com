@@ -161,6 +161,10 @@
       margin-left: auto;
       margin-right: auto;
     }
+
+    @include below($sm) {
+      margin-bottom: 40px;
+    }
     
     ul {
       padding: 0;
@@ -171,6 +175,9 @@
       padding: 0;
       margin: 0 0 32px;
       box-sizing: border-box;
+      @include below($sm) {
+        margin-bottom: 16px;
+      }
     }
 
     li + li {
@@ -181,6 +188,7 @@
       @include below(1080px) {
         padding-left: 0;
       }
+      
     }
 
     .content-item {
@@ -274,6 +282,9 @@
         height: 35px;
         font-size: 21px;
       }
+      @include below($sm) {
+        font-size: 18px;
+      }
     }
 
     button[type="submit"] {
@@ -322,6 +333,9 @@
         font-style: italic;
         @include below($desktop) {
           font-size: 24px;
+        }
+        @include below($sm) {
+          font-size: 18px;
         }
       }
 

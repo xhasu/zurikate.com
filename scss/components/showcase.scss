@@ -61,7 +61,7 @@
   &-swiper {
     position: relative;
     @include below($sm) {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
   }
 
@@ -81,7 +81,7 @@
       right: 15px;
       justify-content: center;
       top: auto;
-      bottom: -10px;
+      bottom: -15px;
     }
 
     .arrow-prev,

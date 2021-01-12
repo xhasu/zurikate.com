@@ -7,6 +7,11 @@
   } else {
     promovideo.setAttribute('src', 'media/BMW-Zurikate.mp4')
   }
+  
+  // contact mobile
+  if( window.innerWidth < 640 ) {
+    $('.info-contact').insertAfter($('#contactForm'));
+  }
 
   // menu
   const burger = document.querySelector('#burger');
@@ -38,7 +43,7 @@
 
   // parallax - rellax
 
-  new Rellax('.board .board-bg', { speed: -8 });
+  new Rellax('.board .board-bg', { speed: 4 });
   new Rellax('.kit .kit-bg', { speed: 4 });
 
   // new Rellax('.background-noise img', { speed: 4 });
