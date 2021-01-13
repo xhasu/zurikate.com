@@ -1,0 +1,198 @@
+
+.prices {
+  position: relative;
+  z-index: 1;
+  padding-top: 60px;
+  margin-bottom: 80px;
+  box-sizing: border-box;
+
+  @include below($laptop) {
+    padding-top: 40px;
+    margin-bottom: 60px;
+  }
+
+  @include below($phone) {
+    padding-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  &-title {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    color: white;
+    letter-spacing: 0.920em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+
+    @include below($hd) {
+      font-size: 32px;
+    }
+    @include below($laptop) {
+      font-size: 24px;
+      letter-spacing: 0.460em;
+    }
+    @include below($sm) {
+      font-size: 18px;
+    }
+  }
+
+  &-section {
+    max-width: 1460px;
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: 28% 1fr 1fr 1fr;
+
+    border: 2px solid white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+    @include below($sm) {
+      grid-template-columns: auto auto auto auto;
+    }
+  }
+
+  &-head {
+    position: relative;
+    padding: 20px 0;
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 1;
+    color: black;
+    text-align: center;
+    background-color: $color-brand;
+    text-transform: uppercase;
+    box-sizing: border-box;
+
+    @include below($hd) {
+      font-size: 32px;
+    }
+    @include below($laptop) {
+      font-size: 21px;
+      padding: 10px 0;
+    }
+    @include below($sm) {
+      font-size: 16px;
+      padding: 5px 0;
+    }
+    @include below($phone) {
+      font-size: 14px;
+    }
+    @include below(340px) {
+      font-size: 12px;
+    }
+  }
+
+  &-item {
+    position: relative;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    padding: 30px 20px;
+    font-size: 46px;
+    line-height: 1;
+    // font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    box-sizing: border-box;
+
+    @include below($hd) {
+      font-size: 32px;
+    }
+    @include below($laptop) {
+      padding: 15px 10px;
+      font-size: 21px;
+    }
+    @include below($sm) {
+      font-size: 16px;
+      padding: 10px 5px;
+    }
+    @include below($phone) {
+      font-size: 14px;
+    }
+    
+    span {
+      font-size: 24px;
+      font-weight: 400;
+      text-transform: none;
+      display: inline-block;
+      @include below($laptop) {
+        font-size: 16px;
+      }
+      @include below($phone) {
+        font-size: 12px;
+      }
+    }
+
+    &:nth-child(4n) {
+      border-right: none;
+    }
+  }
+
+  .item-left {
+    text-align: left;
+  }
+
+  &-footer {
+    border-right: 1px solid white;
+    padding: 10px 20px 20px 20px ;
+    font-size: 30px;
+    line-height: 1.2;
+    color: $color-brand;
+    text-align: center;
+    box-sizing: border-box;
+
+    @include below($hd) {
+      font-size: 24px;
+    }
+    @include below($laptop) {
+      font-size: 18px;
+      padding: 10px;
+    }
+    @include below($sm) {
+      font-size: 14px;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    @include below($phone) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    @include below(340px) {
+      font-size: 12px;
+    }
+    
+    .prices-item + & {
+      padding-top: 20px;
+      font-size: 38px;
+      font-weight: 700;
+      text-align: left;
+      text-transform: uppercase;
+      @include below($hd) {
+        font-size: 28px;
+      }
+      @include below($laptop) {
+        font-size: 18px;
+        padding-top: 10px;
+      }
+      @include below($sm) {
+        font-size: 16px;
+      }
+      @include below($phone) {
+        font-size: 12px;
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+    }
+
+    &:last-child {
+      border: none;
+    }
+  }
+}
