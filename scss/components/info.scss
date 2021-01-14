@@ -18,10 +18,10 @@
   &-head {
     position: relative;
     padding: 0 40px;
-    margin-bottom: 160px;
+    margin-bottom: 60px;
     box-sizing: border-box;
     @include below($laptop) {
-      margin-bottom: 60px;
+      margin-bottom: 40px;
     }
     @include below($tablet) {
       padding: 0 15px;

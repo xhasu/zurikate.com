@@ -64,9 +64,7 @@
 
   &-swiper {
     position: relative;
-    @include below($sm) {
-      margin-bottom: 60px;
-    }
+    margin-bottom: 60px;
   }
 
   .swiper-arrows {
