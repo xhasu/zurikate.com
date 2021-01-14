@@ -3,6 +3,7 @@
 
   position: relative;
   z-index: 0;
+  overflow: hidden;
 
   &-bg {
     position: absolute;
@@ -22,9 +23,14 @@
       display: block;
       max-width: 100%;
       height: auto;
+      @include below($sm) {
+        width: 200%;
+        max-width: none;
+        margin-left: -50%;
+      }
     }
     @include below($sm) {
-      padding: 0 30px;
+      padding: 0;
       opacity: .6;
     }
   }

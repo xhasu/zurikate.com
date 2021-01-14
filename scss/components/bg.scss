@@ -19,14 +19,14 @@
     // object-fit: cover;
     margin-bottom: 0;
 
-    &:nth-child(2n+1) {
+    &:nth-child(even) {
       transform: rotateZ(180deg);
     }
   }
 
   &::after {
-    content: "";
-    display: block;
+    // content: "";
+    display: none;
     clear: both;
 
     @include no-events();
