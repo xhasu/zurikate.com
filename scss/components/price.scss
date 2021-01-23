@@ -8,6 +8,7 @@
 
   + .prices {
     padding-top: 0;
+    margin-bottom: 40px;
   }
 
   @include below($laptop) {
