@@ -39,7 +39,7 @@
         .querySelector(this.getAttribute('data-to-view'))
         .scrollIntoView({ behavior: 'smooth' });*/
 
-      var offsetPosition = document.querySelector(this.getAttribute('data-to-view')).getBoundingClientRect().top + window.scrollY - 80;
+      var offsetPosition = document.querySelector(this.getAttribute('data-to-view')).getBoundingClientRect().top - 90 + window.scrollY;
       window.scrollTo({top: offsetPosition, behavior: 'smooth'});
     });
   }
