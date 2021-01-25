@@ -38,8 +38,8 @@
       /*document
         .querySelector(this.getAttribute('data-to-view'))
         .scrollIntoView({ behavior: 'smooth' });*/
-
-      var offsetPosition = document.querySelector(this.getAttribute('data-to-view')).getBoundingClientRect().top - 90 + window.scrollY;
+      var headerheight = document.querySelector('header.header').offsetHeight + 5;
+      var offsetPosition = document.querySelector(this.getAttribute('data-to-view')).getBoundingClientRect().top - headerheight + window.scrollY;
       window.scrollTo({top: offsetPosition, behavior: 'smooth'});
     });
   }
