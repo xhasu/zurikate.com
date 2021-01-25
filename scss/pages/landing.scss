@@ -31,8 +31,10 @@ h3.page-subtitle {
 .embed {
   display: flex;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
   background-color: black;
+  
   @include below($phone) {
     min-height: 320px;
   }
@@ -40,11 +42,10 @@ h3.page-subtitle {
 
 .embed video {
   display: block;
-  width: 100%;
   height: auto;
-  // height: 100%;
-  // min-height: 100vh;
-  min-width: 100%;
+  min-height: 420px;
+  width: 100%;
+  max-width: 840px;
   margin-bottom: 0;
   box-sizing: border-box;
   object-fit: cover;

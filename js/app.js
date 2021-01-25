@@ -35,9 +35,12 @@
 
       toggleHeaderNavbar();
 
-      document
+      /*document
         .querySelector(this.getAttribute('data-to-view'))
-        .scrollIntoView({ behavior: 'smooth' });
+        .scrollIntoView({ behavior: 'smooth' });*/
+
+      var offsetPosition = document.querySelector(this.getAttribute('data-to-view')).getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({top: offsetPosition, behavior: 'smooth'});
     });
   }
 
