@@ -51,7 +51,8 @@
 
   // new Rellax('.background-noise img', { speed: 4 });
 
-  new Rellax('.hero-head', { speed: 2 });
+  // new Rellax('.embed-head', { speed: 2 });
+  new Rellax('.hero-head', { speed: 1 });
   new Rellax('.hero-description', { speed: 1 });
 
   // swiper
@@ -109,7 +110,7 @@
     loop: true,
     threshold: 20,
     autoplay: {
-      delay: 1500,
+      delay: 2000,
       disableOnInteraction: false,
     },
     pagination: {

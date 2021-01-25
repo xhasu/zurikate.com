@@ -34,24 +34,99 @@ h3.page-subtitle {
   justify-content: center;
   overflow: hidden;
   background-color: black;
+
+  padding-top: 80px;
+  padding-bottom: 80px;
   
+  @include below($laptop) {
+    display: block;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
   @include below($phone) {
     min-height: 320px;
   }
-}
 
-.embed video {
-  display: block;
-  height: auto;
-  min-height: 420px;
-  width: 100%;
-  max-width: 840px;
-  margin-bottom: 0;
-  box-sizing: border-box;
-  object-fit: cover;
-  object-position: center;
-  @include below($tablet) {
-    object-fit: contain;
-    min-height: auto;
+  video {
+    display: block;
+    height: auto;
+    min-height: 420px;
+    width: 100%;
+    max-width: 840px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    object-fit: cover;
+    object-position: center;
+    @include below($tablet) {
+      object-fit: contain;
+      min-height: auto;
+    }
   }
+
+  &-head {
+    order: 0;
+    padding-left: 15px;
+    padding-right: 60px;
+    max-width: 720px;
+    box-sizing: border-box;
+    @include below($hd) {
+      max-width: 520px;
+      padding-right: 40px;
+    }
+    @include below($laptop) {
+      order: 1;
+      padding: 0 10px;
+    }
+  }
+
+  &-media {
+    order: 1;
+    padding: 0 15px;
+    box-sizing: border-box;
+    @include below($laptop) {
+      order: 0;
+      padding: 0;
+      margin-bottom: 40px;
+    }
+  }
+
+  &-title {
+    position: relative;
+    margin-bottom: 8px;
+    @include font-object();
+    font-size: 80px;
+    line-height: 1;
+    text-transform: uppercase;
+    span {
+      color: $color-brand;
+    }
+    @include below($hd) {
+      font-size: 70px;
+    }
+    @include below($desktop) {
+      font-size: 52px;
+    }
+    @include below($phone) {
+      font-size: 32px;
+    }
+  }
+
+  &-subtitle {
+    font-size: 30px;
+    color: white;
+    margin-bottom: 12px;
+    b {
+      color: $color-brand;
+    }
+    @include below($hd) {
+      font-size: 24px ;
+    }
+    @include below($phone) {
+      font-size: 18px;
+    }
+  }
+
 }

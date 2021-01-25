@@ -31,7 +31,7 @@
 
   &-item {
     position: relative;
-    margin-top: 250px;
+    margin-top: 60px;
     img {
       @include img-fluid();
     }
@@ -53,42 +53,6 @@
     @include below($laptop) {
       position: static;
       padding: 0 10px;
-    }
-  }
-
-  &-title {
-    position: relative;
-    margin-bottom: 8px;
-    @include font-object();
-    font-size: 80px;
-    line-height: 1;
-    text-transform: uppercase;
-    span {
-      color: $color-brand;
-    }
-    @include below($hd) {
-      font-size: 70px;
-    }
-    @include below($desktop) {
-      font-size: 52px;
-    }
-    @include below($phone) {
-      font-size: 32px;
-    }
-  }
-
-  &-subtitle {
-    font-size: 30px;
-    color: white;
-    margin-bottom: 12px;
-    b {
-      color: $color-brand;
-    }
-    @include below($hd) {
-      font-size: 24px ;
-    }
-    @include below($phone) {
-      font-size: 18px;
     }
   }
 
