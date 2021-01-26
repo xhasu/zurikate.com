@@ -69,12 +69,9 @@
     span {
       display: block;
       @include font-object();
-      font-size: 132px;
+      font-size: 90px;
       line-height: 1;
       text-transform: uppercase;
-      @include below($hd) {
-        font-size: 112px;
-      }
       @include below($desktop) {
         font-size: 72px;
       }
@@ -147,11 +144,8 @@
   &-content {
     margin-right: 0;
     margin-left: auto;
-    max-width: 760px;
+    max-width: 620px;
 
-    @include below($desktop) {
-      max-width: 620px;
-    }
     @include below(1080px) {
       max-width: 540px;
     }
@@ -227,14 +221,11 @@
       }
     }
     p {
-      font-size: 30px;
+      font-size: 24px;
       line-height: 1;
       margin-top: 0;
       margin-bottom: 12px;
       box-sizing: border-box;
-      @include below($desktop) {
-        font-size: 24px;
-      }
       @include below(1080px) {
         font-size: 21px;
       }
@@ -250,8 +241,8 @@
       }
       &.lead {
         padding-left: 30px;
-        font-size: 34px;
-        margin-bottom: 40px;
+        font-size: 28px;
+        margin-bottom: 20px;
         @include below(1080px) {
           font-size: 24px;
         }
@@ -272,16 +263,12 @@
       width: 100%;
       border: none;
       border-radius: 0;
-      height: 45px;
+      height: 35px;
       padding: 0 15px;
-      font-size: 24px;
+      font-size: 21px;
       text-align: left;
       background-color: white;
       box-sizing: border-box;
-      @include below($desktop) {
-        height: 35px;
-        font-size: 21px;
-      }
       @include below($sm) {
         font-size: 18px;
       }
@@ -315,14 +302,11 @@
     .input-file {
       display: flex;
       align-items: center;
-      height: 60px;
+      height: 35px;
       padding: 8px 15px;
       background-color: white;
       cursor: pointer;
       box-sizing: border-box;
-      @include below($desktop) {
-        height: 40px;
-      }
       img {
         display: block;
         height: auto;
@@ -334,13 +318,10 @@
         }
       }
       span {
-        font-size: 30px;
+        font-size: 21px;
         color: black;
-        padding-left: 20px;
+        padding-left: 10px;
         font-style: italic;
-        @include below($desktop) {
-          font-size: 24px;
-        }
         @include below($sm) {
           font-size: 18px;
         }

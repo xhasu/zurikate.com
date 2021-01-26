@@ -93,10 +93,10 @@
     fadeEffect: {
       crossFade: true,
     },
-    autoplay: {
+    /*autoplay: {
       delay: 6000,
       disableOnInteraction: false,
-    },
+    },*/
     navigation: {
       prevEl: showcaseArrows.querySelector('.arrow-prev'),
       nextEl: showcaseArrows.querySelector('.arrow-next'),

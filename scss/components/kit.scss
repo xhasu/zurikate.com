@@ -67,16 +67,15 @@
       margin-bottom: 8px;
     }
     p {
-      font-size: 26px;
+      font-size: 21px;
       font-style: italic;
       line-height: 1.4;
       margin-top: 0;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       @include below($desktop) {
-        font-size: 21px;
+        font-size: 16px;
       }
       @include below($phone) {
-        font-size: 16px;
         margin-bottom: 12px;
       }
     }
