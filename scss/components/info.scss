@@ -5,6 +5,7 @@
 
   &-section {
     padding-bottom: 60px;
+    max-width: $desktop - 120px;
   }
   &-box {
     display: flex;
@@ -59,7 +60,7 @@
   }
   &-lead {
     overflow: hidden;
-    margin-bottom: 160px;
+    margin-bottom: 140px;
     @include below($laptop) {
       margin-bottom: 40px;
       max-width: 480px;
@@ -69,9 +70,12 @@
     span {
       display: block;
       @include font-object();
-      font-size: 90px;
+      font-size: 132px;
       line-height: 1;
       text-transform: uppercase;
+      @include below($hd) {
+        font-size: 90px;
+      }
       @include below($desktop) {
         font-size: 72px;
       }
@@ -162,6 +166,7 @@
     
     ul {
       padding: 0;
+      padding-top: 15px;
       margin: 0 0 24px;
     }
     li {
@@ -354,12 +359,12 @@
     left: 0;
     right: 0;
     z-index: -1;
-    max-width: 1280px;
+    max-width: 768px;
     margin-left: auto;
     margin-right: auto;
     img {
       display: block;
-      max-width: 60%;
+      max-width: 65%;
       width: 100%;
       height: auto;
       margin-bottom: 0;
