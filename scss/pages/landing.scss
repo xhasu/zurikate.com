@@ -41,10 +41,6 @@ h3.page-subtitle {
     padding-bottom: 0;
   }
 
-  @include below($phone) {
-    min-height: 320px;
-  }
-
   video {
     display: block;
     height: auto;
@@ -87,6 +83,12 @@ h3.page-subtitle {
       order: 0;
       padding: 0;
       margin-bottom: 40px;
+    }
+    @include below($phone) {
+      min-height: 360px;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
     }
   }
 
