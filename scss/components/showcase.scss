@@ -61,7 +61,7 @@
 
   &-media {
     display: flex;
-    gap: 30px;
+    gap: 15px;
     @include below($laptop - 92px) {
       flex-direction: column;
     }
