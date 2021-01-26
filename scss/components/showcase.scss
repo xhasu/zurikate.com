@@ -9,7 +9,7 @@
 
   &-section {
     position: relative;
-    max-width: $desktop + 152px;
+    max-width: 1024px + 152px;
     padding: 0 76px;
     @include below($laptop) {
       padding: 0 50px;

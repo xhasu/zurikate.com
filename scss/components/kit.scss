@@ -120,7 +120,7 @@
 
   &-minibox {
     position: absolute;
-    top: 15%;
+    top: 30%;
     right: 0;
     text-align: center;
     @include below($desktop) {
@@ -130,7 +130,7 @@
     }
     p {
       color: $color-brand;
-      font-size: 24px;
+      font-size: 21px;
       margin-bottom: 8px;
       &::before {
         content: "-";

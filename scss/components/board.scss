@@ -35,7 +35,7 @@
 
   &-section {
     position: relative;
-    max-width: $desktop + 136px;
+    max-width: 1024px + 136px;
     z-index: 1;
     @include below($sm) {
       padding: 0;
