@@ -52,6 +52,9 @@ h3.page-subtitle {
 
   &-scroll {
     display: none;
+    visibility: hidden;
+    opacity: 0;
+    
     position: absolute;
     left: 0;
     right: 0;
@@ -61,7 +64,7 @@ h3.page-subtitle {
     max-width: 240px;
     text-align: center;
     color: white;
-    opacity: 1;
+    // opacity: 1;
     transition: opacity ease-in-out 600ms, transform ease-out 400ms;
     cursor: pointer;
     z-index: 5;
