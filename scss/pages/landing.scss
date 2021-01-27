@@ -60,7 +60,6 @@ h3.page-subtitle {
   }
 
   &-head {
-    order: 0;
     padding-left: 15px;
     padding-right: 60px;
     max-width: 720px;
@@ -70,23 +69,27 @@ h3.page-subtitle {
       padding-right: 40px;
     }
     @include below($laptop) {
-      order: 1;
       padding: 0 10px;
+    }
+    @include below($phone) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 300px;
+      margin: 0 auto;
+      padding-top: 60px;
     }
   }
 
   &-media {
-    order: 1;
     padding: 0 15px;
     box-sizing: border-box;
     @include below($laptop) {
-      order: 0;
       padding: 0;
       margin-bottom: 40px;
     }
     @include below($phone) {
-      min-height: 360px;
-      min-height: 50vh;
+      min-height: 260px;
       display: flex;
       align-items: center;
     }
@@ -99,8 +102,19 @@ h3.page-subtitle {
     font-size: 80px;
     line-height: 1;
     text-transform: uppercase;
+    color: $color-brand;
     span {
-      color: $color-brand;
+      font-size: 100px;
+      color: white;
+      @include below($hd) {
+        font-size: 88px;
+      }
+      @include below($desktop) {
+        font-size: 65px;
+      }
+      @include below($phone) {
+        font-size: 58px;
+      }
     }
     @include below($hd) {
       font-size: 70px;
@@ -109,22 +123,20 @@ h3.page-subtitle {
       font-size: 52px;
     }
     @include below($phone) {
-      font-size: 32px;
+      font-size: 46px;
     }
   }
 
   &-subtitle {
-    font-size: 30px;
+    font-size: 24px;
+    line-height: 1;
     color: white;
     margin-bottom: 12px;
     b {
       color: $color-brand;
     }
-    @include below($hd) {
-      font-size: 24px ;
-    }
     @include below($phone) {
-      font-size: 18px;
+      font-size: 15px;
     }
   }
 
