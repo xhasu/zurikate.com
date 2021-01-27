@@ -47,7 +47,7 @@ h3.page-subtitle {
   }
 
   @include below($phone) {
-    min-height: 100vh;
+    // min-height: 100vh;
   }
 
   &-scroll {
