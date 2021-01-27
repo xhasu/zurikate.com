@@ -6,6 +6,9 @@
     promovideo.querySelector('source').setAttribute('src', 'media/BMW-Zurikate-Mobile.mp4?v=' + (+new Date))
   } else {
     promovideo.querySelector('source').setAttribute('src', 'media/BMW-Zurikate.mp4?v=' + (+new Date))
+    setTimeout(() => {
+      promovideo.play();
+    }, 0);
   }
   
   // contact mobile
