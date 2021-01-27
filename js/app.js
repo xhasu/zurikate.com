@@ -3,9 +3,9 @@
   // video
   const promovideo = document.querySelector('#promovideo');
   if( window.innerWidth < 768 ) {
-    promovideo.querySelector('source').setAttribute('src', 'media/BMW-Zurikate-Mobile.mp4')
+    promovideo.querySelector('source').setAttribute('src', 'media/BMW-Zurikate-Mobile.mp4?v=' + (+new Date))
   } else {
-    promovideo.querySelector('source').setAttribute('src', 'media/BMW-Zurikate.mp4')
+    promovideo.querySelector('source').setAttribute('src', 'media/BMW-Zurikate.mp4?v=' + (+new Date))
   }
   
   // contact mobile
