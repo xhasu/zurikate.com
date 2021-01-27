@@ -26,6 +26,7 @@ h3.page-subtitle {
 }
 
 .embed {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,11 +35,62 @@ h3.page-subtitle {
 
   padding-top: 80px;
   padding-bottom: 80px;
+
+  @include above($laptop) {
+    min-height: 75vh;
+  }
   
   @include below($laptop) {
     display: block;
     padding-top: 0;
     padding-bottom: 0;
+  }
+
+  @include below($phone) {
+    min-height: 100vh;
+  }
+
+  &-scroll {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 240px;
+    text-align: center;
+    color: white;
+    opacity: 1;
+    transition: opacity ease-in-out 600ms, transform ease-out 400ms;
+    cursor: pointer;
+    z-index: 5;
+    span {
+      display: block;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      font-size: 24px;
+      line-height: 1;
+      margin-bottom: 8px;
+      @include below($tablet) {
+        font-size: 16px;
+      }
+    }
+    .icon {
+      display: block;
+      text-align: center;
+      img {
+        display: block;
+        width: auto;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+    }
+
+    @include below($phone) {
+      opacity: .6;
+      bottom: 120px;
+    }
   }
 
   video {
@@ -134,6 +186,9 @@ h3.page-subtitle {
     margin-bottom: 12px;
     b {
       color: $color-brand;
+    }
+    @include below($desktop) {
+      font-size: 18px;
     }
     @include below($phone) {
       font-size: 15px;
