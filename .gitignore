@@ -4,4 +4,4 @@ node_modules
 build
 *.mp4
 vendor
-.env
+*.env
