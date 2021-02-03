@@ -209,6 +209,9 @@
         span {
           color: $color-brand;
         }
+        @include below($sm) {
+          letter-spacing: 0.3em;
+        }
       }
       .icon + div {
         flex-grow: 1;
@@ -362,6 +365,11 @@
       font-size: 24px;
       line-height: 1;
       margin-bottom: 8px;
+
+      @include below($sm) {
+        font-size: 18px;
+      }
+
       input {
         display: none;
         opacity: 0;
@@ -376,9 +384,16 @@
       border-radius: 2px;
       margin-left: 8px;
       background-color: white;
+      svg {
+        display: none;
+        color: black;
+      }
     }
     .opt-label input:checked + .opt-box {
       background-color: $color-brand;
+      svg {
+        display: block;
+      }
     }
   }
 
