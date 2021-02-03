@@ -21,6 +21,8 @@
 
   $email = $_POST["email"];
   $car = $_POST["car"];
+  $city = $_POST["city"];
+  $opt = $_POST["opt"];
   $color = $_POST["color"];
 
   try {
@@ -42,7 +44,7 @@
     // Content
     // $mail->isHTML(true);
     $mail->Subject = "Zurikate $subject";
-    $mail->Body    = "$email - $car - $color";
+    $mail->Body    = "$email - $car - $city - $color - $opt";
     $mail->AddAttachment( $_FILES['file_vehicle']['tmp_name'], $_FILES['file_vehicle']['name']);
     $mail->AddAttachment( $_FILES['file_wheel']['tmp_name'], $_FILES['file_wheel']['name']);
 

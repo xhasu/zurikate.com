@@ -154,16 +154,20 @@
 
       let email = document.querySelector('#email').value;
       let car = document.querySelector('#car').value;
+      let city = document.querySelector('#city').value;
       let file_vehicle = document.querySelector('#file_vehicle').files[0];
       let file_wheel = document.querySelector('#file_wheel').files[0];
+      let opt = document.querySelector('input[name=opt]:checked').value;
       let color = document.querySelector('#color').value;
 
       let data = new FormData();
       data.append('email', email);
       data.append('car', car);
+      data.append('city', city);
       data.append('file_vehicle', file_vehicle);
       data.append('file_wheel', file_wheel);
       data.append('color', color);
+      data.append('opt', opt);
 
       axios
         .post(url, data)
@@ -203,8 +207,10 @@
   function clearContactForm() {
     document.querySelector('#email').value = '';
     document.querySelector('#car').value = '';
+    document.querySelector('#city').value = '';
     document.querySelector('#file_vehicle').value = null;
     document.querySelector('#file_wheel').value = null;
+    // document.querySelector('input[name=opt]:checked').value = '';
     document.querySelector('#color').value = '';
   }
 

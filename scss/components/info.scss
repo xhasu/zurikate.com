@@ -201,6 +201,15 @@
         line-height: 1.2;
         letter-spacing: 0.3em;
       }
+      .small-msj {
+        font-style: italic;
+        font-size: 16px;
+        line-height: 1.2;
+        letter-spacing: 0.5em;
+        span {
+          color: $color-brand;
+        }
+      }
       .icon + div {
         flex-grow: 1;
       }
@@ -346,6 +355,31 @@
     input:valid + .input-file span:last-child {
       display: inline-block;
     }
+
+    .opt-label {
+      display: block;
+      cursor: pointer;
+      font-size: 24px;
+      line-height: 1;
+      margin-bottom: 8px;
+      input {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+    .opt-box {
+      display: inline-block;
+      vertical-align: top;
+      width: 24px;
+      height: 24px;
+      border-radius: 2px;
+      margin-left: 8px;
+      background-color: white;
+    }
+    .opt-label input:checked + .opt-box {
+      background-color: $color-brand;
+    }
   }
 
   .page-lead {
@@ -369,7 +403,7 @@
       height: auto;
       margin-bottom: 0;
     }
-    @include below($tablet) {
+    @include below($laptop) {
       opacity: .4 !important;
     }
   }
