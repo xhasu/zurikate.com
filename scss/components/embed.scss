@@ -1,0 +1,164 @@
+.embed {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: black;
+
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  min-height: 85vh;
+  
+  @include below($laptop) {
+    display: block;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  @include below($phone) {
+    // min-height: 100vh;
+  }
+
+  video {
+    display: block;
+    height: auto;
+    min-height: 420px;
+    width: 100%;
+    max-width: 840px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    object-fit: cover;
+    object-position: center;
+    @include below($tablet) {
+      object-fit: contain;
+      min-height: auto;
+    }
+  }
+
+  &-head {
+    padding-left: 15px;
+    padding-right: 60px;
+    max-width: 720px;
+    box-sizing: border-box;
+    @include below($hd) {
+      max-width: 520px;
+      padding-right: 40px;
+    }
+    @include below($laptop) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 300px;
+      margin: 0 auto;
+      padding: 60px 10px 40px 10px;
+    }
+    @include below($sm) {
+      padding-bottom: 10px;
+    }
+  }
+
+  &-media {
+    padding: 0 15px;
+    box-sizing: border-box;
+    @include below($laptop) {
+      padding: 0;
+      margin-bottom: 40px;
+    }
+    @include below($phone) {
+      min-height: 260px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &-title {
+    position: relative;
+    margin-bottom: 8px;
+    @include font-object();
+    font-size: 80px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: $color-brand;
+    span {
+      font-size: 100px;
+      color: white;
+      @include below($hd) {
+        font-size: 88px;
+      }
+      @include below($desktop) {
+        font-size: 65px;
+      }
+      @include below($phone) {
+        font-size: 58px;
+      }
+    }
+    @include below($hd) {
+      font-size: 70px;
+    }
+    @include below($desktop) {
+      font-size: 52px;
+    }
+    @include below($phone) {
+      font-size: 46px;
+    }
+  }
+
+  &-subtitle {
+    font-size: 24px;
+    line-height: 1;
+    color: white;
+    margin-bottom: 12px;
+    b {
+      color: $color-brand;
+    }
+    @include below($desktop) {
+      font-size: 18px;
+    }
+    @include below($phone) {
+      font-size: 15px;
+    }
+  }
+
+  &-scroll {    
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 240px;
+    text-align: center;
+    color: white;
+    // opacity: 1;
+    transition: opacity ease-in-out 600ms, transform ease-out 400ms;
+    cursor: pointer;
+    z-index: 5;
+    span {
+      display: block;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      font-size: 24px;
+      line-height: 1;
+      margin-bottom: 8px;
+      @include below($tablet) {
+        display: none;
+        font-size: 16px;
+      }
+    }
+    .icon {
+      display: block;
+      text-align: center;
+      img {
+        display: block;
+        width: auto;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+    }
+  }
+
+}

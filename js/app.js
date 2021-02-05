@@ -10,10 +10,21 @@
       promovideo.play();
     }, 0);
   }
-  
-  // contact mobile
-  if( window.innerWidth < 640 ) {
-    $('.info-contact').insertAfter($('#contactForm'));
+
+  // AOS
+  try {  
+    Promise.all(Array.from(document.images)
+    .filter(img => !img.complete && img.loading != "lazy")
+    .map(img => new Promise(resolve => {
+      img.onload = img.onerror = resolve;
+    })))
+    .then((promises) => {
+      console.log('images finished loading', promises.length);
+      AOS.init();
+    });
+  } catch (err) {
+    console.log(err)
+    AOS.init();
   }
 
   // menu
@@ -28,6 +39,10 @@
     menu && menu.classList.toggle('open');
   }
 
+  const closeHeaderNavbar = () => {
+    menu && menu.classList.remove('open');
+  }
+
   // scrollview
   let toView = document.querySelectorAll('[data-to-view^="#"]');
   let toViewSize = toView.length;
@@ -36,7 +51,7 @@
     toView.item(i).addEventListener('click', function (e) {
       e.preventDefault();
 
-      toggleHeaderNavbar();
+      closeHeaderNavbar();
 
       /*document
         .querySelector(this.getAttribute('data-to-view'))
@@ -56,7 +71,7 @@
 
   // new Rellax('.embed-head', { speed: 2 });
   new Rellax('.hero-head', { speed: 1 });
-  new Rellax('.hero-description', { speed: 1 });
+  new Rellax('.hero-description', { speed: 2 });
 
   // swiper
   let swipers = document.querySelectorAll('.board-swiper');
@@ -127,15 +142,9 @@
     },
   });
 
-  // AOS
-  try {  
-    Promise.all(Array.from(document.images).filter(img => !img.complete && img.loading != "lazy").map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then((promises) => {
-      console.log('images finished loading', promises.length);
-      AOS.init();
-    });
-  } catch (err) {
-    console.log(err)
-    AOS.init();
+  // contact mobile
+  if( window.innerWidth < 640 ) {
+    $('.info-contact').insertAfter($('#contactForm'));
   }
 
   // form contact ajax
