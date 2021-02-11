@@ -57,11 +57,13 @@
       padding: 60px 10px 40px 10px;
     }
     @include below($sm) {
+      padding-top: 30px;
       padding-bottom: 10px;
     }
   }
 
   &-media {
+    flex: 1;
     padding: 0 15px;
     box-sizing: border-box;
     @include below($laptop) {
@@ -120,6 +122,7 @@
     }
     @include below($phone) {
       font-size: 15px;
+      margin-bottom: 0;
     }
   }
 
@@ -145,8 +148,10 @@
       line-height: 1;
       margin-bottom: 8px;
       @include below($tablet) {
-        display: none;
         font-size: 16px;
+      }
+      @media only screen and (max-height: 480px ) {
+        display: none;
       }
     }
     .icon {

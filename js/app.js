@@ -8,11 +8,11 @@
     promovideo.querySelector('source').setAttribute('src', 'media/BMW-Zurikate.mp4?v=' + (+new Date))
     setTimeout(() => {
       promovideo.play();
-    }, 0);
+    }, 600);
   }
 
   // AOS
-  try {  
+  /*try {  
     Promise.all(Array.from(document.images)
     .filter(img => !img.complete && img.loading != "lazy")
     .map(img => new Promise(resolve => {
@@ -25,7 +25,11 @@
   } catch (err) {
     console.log(err)
     AOS.init();
-  }
+  }*/
+
+  setTimeout(() => {
+    AOS.init();
+  }, 1200);
 
   // menu
   const burger = document.querySelector('#burger');
